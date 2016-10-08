@@ -3,6 +3,8 @@ var app = express();
 var mongojs = require('mongojs');
 var db = mongojs("contactList", ['contactList']);
 var bodyParser = require('body-parser');
+var server = require('http').Server(app);
+
 
 app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.json());
@@ -48,5 +50,6 @@ app.put("/contactList/:id", function(req, res) {
     });
 });
 
-app.listen(3000);
-console.log("Server Running on port 3000.");
+server.listen(3000, function() {
+    console.log("Server Running on port 3000.");
+});

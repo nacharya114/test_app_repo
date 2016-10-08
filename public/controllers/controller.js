@@ -3,6 +3,7 @@ myApp.controller('AppCtrl', ['$scope','$http', function($scope, $http) {
     console.log("Hello World from Cotnroller.");
 
 
+
     var refresh = function() {
         $http.get("/contactList").success(function(response) {
             console.log("I got the json.");
@@ -45,6 +46,8 @@ myApp.controller('AppCtrl', ['$scope','$http', function($scope, $http) {
     $scope.deselect = function() {
         $scope.contact = "";
     }
+
+    //Listeners
 
 
     // var Person = function (name, email, number) {
